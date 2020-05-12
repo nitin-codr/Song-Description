@@ -2,18 +2,23 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 class SongList extends Component {
+    renderSongs() {
+        return this.props.songs.map(song=> {
+            return (
+            <div className="item" key={song.title}>
+                <div className="right floated content">
+                    <button className="ui button primary">
+                        Select
+                    </button>
+                </div>
+                <div className="content">{song.title}</div>
+            </div>
+        )})
+    }
     render() {
         return (
-            <div>
-                <ul>
-                    {this.props.songs.map(song=> {
-                        return <li key={song.title}>
-                            {song.title} 
-                            <br />
-                            {song.duration}
-                        </li>
-                    })}
-                </ul>
+            <div className="ui divided list">
+                {this.renderSongs()}
             </div>
         )
     };
