@@ -14,7 +14,7 @@ const selectedSongReducer = (selectedSong=null, action) => {
     if(action.type==='SONG_SELECTED') {
         return action.song;
     }
-    return selectSong;
+    return selectedSong;
 }
 
 export default combineReducers({
