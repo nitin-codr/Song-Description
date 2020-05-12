@@ -9,7 +9,9 @@ const App = () => {
                     <SongList />
                 </div>
                 <div className="ui column eight wide">
-                    <SongDetails />
+                    <div className="ui container">
+                        <SongDetails />
+                    </div>
                 </div>
             </div>
         </div>
